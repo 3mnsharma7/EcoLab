@@ -47,8 +47,11 @@ def connect(ip, port):
 ## READ DATA
 def leerArp():
     arch = open("data/arp.dat") #arp.dat is an ethernet/ip address database
+    
     for linea in arch:
+        print "Value of linea before split : ", linea
         linea = linea.strip().split("-")
+        print "Value of linea after split : ", linea
         #print linea
     arch.close()
 
@@ -97,12 +100,17 @@ if __name__ == "__main__":
     os.system("clear")
     if len(sys.argv) != 1: #If argument exist
         if sys.argv[1] == "check":
+            print "You have given check !"
             pass
         elif sys.argv[1] == "add":
+            print "you have given add !"
             pass
         elif sys.argv[1] == "remove":
+            print "you have given remove !"
             pass
         elif sys.argv[1] == "connect":
+            print "you have given connect !"
+
             if len(sys.argv) > 2 and len(sys.argv) < 5:
                 #SI NO SE ESPECIFICA PUERTO, SE USA 5678 POR DEFECTO
                 # (EN) If no port is specified, port 5678 is used by default
